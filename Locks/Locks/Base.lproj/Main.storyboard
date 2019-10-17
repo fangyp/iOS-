@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wft-p4-PeY">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="9sU-oH-5yy">
+            <objects>
+                <viewController id="Wft-p4-PeY" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iGS-Aq-eB2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwd-XT-LN1">
+                                <rect key="frame" x="0.0" y="69" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0hZ-Rb-J8B"/>
+                                </constraints>
+                                <state key="normal" title="synchronized 互斥锁 性能较差"/>
+                                <connections>
+                                    <action selector="synchronizedAction:" destination="Wft-p4-PeY" eventType="touchUpInside" id="gcQ-Ku-lqw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw5-mR-oc1">
+                                <rect key="frame" x="0.0" y="109" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="r6T-RW-50e"/>
+                                </constraints>
+                                <state key="normal" title="NSLock 互斥锁 不能多次调用 lock方法,会死锁"/>
+                                <connections>
+                                    <action selector="lockAction:" destination="Wft-p4-PeY" eventType="touchUpInside" id="MuE-dd-Prf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSg-ph-VRq">
+                                <rect key="frame" x="0.0" y="149" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4W5-Sh-WNL"/>
+                                </constraints>
+                                <state key="normal" title="NSRecursiveLock 递归锁"/>
+                                <connections>
+                                    <action selector="recursiveLockAction:" destination="Wft-p4-PeY" eventType="touchUpInside" id="WV7-Co-Npm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1p-kk-aav">
+                                <rect key="frame" x="0.0" y="189" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Mu3-rL-qg9"/>
+                                </constraints>
+                                <state key="normal" title="NSConditionLock 条件锁"/>
+                                <connections>
+                                    <action selector="conditionLockAction:" destination="Wft-p4-PeY" eventType="touchUpInside" id="9h3-wl-y6G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nk-CQ-52D">
+                                <rect key="frame" x="0.0" y="229" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="v4U-r3-vyq"/>
+                                </constraints>
+                                <state key="normal" title="pthread_mutex 互斥锁"/>
+                                <connections>
+                                    <action selector="pthread_mutextAction:" destination="Wft-p4-PeY" eventType="touchUpInside" id="Jy2-r6-UfG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0w-Pb-fZb">
+                                <rect key="frame" x="0.0" y="269" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="15Y-ld-Kha"/>
+                                </constraints>
+                                <state key="normal" title="dispatch_semaphore 信号量"/>
+                                <connections>
+                                    <action selector="dispatch_semaphoreAction:" destination="Wft-p4-PeY" eventType="touchUpInside" id="skM-w7-bTu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gw-0L-rXp">
+                                <rect key="frame" x="0.0" y="309" width="414" height="30"/>
+                                <state key="normal" title="OSSpinLock 不建议使用了"/>
+                                <connections>
+                                    <action selector="OSSpinLockAction:" destination="Wft-p4-PeY" eventType="touchUpInside" id="yy0-g5-Va6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fwd-XT-LN1" firstAttribute="leading" secondItem="iGS-Aq-eB2" secondAttribute="leading" id="2pz-vt-PUg"/>
+                            <constraint firstItem="9nk-CQ-52D" firstAttribute="leading" secondItem="vp1-UT-oVe" secondAttribute="leading" id="5pe-bA-zns"/>
+                            <constraint firstItem="vSg-ph-VRq" firstAttribute="top" secondItem="vw5-mR-oc1" secondAttribute="bottom" constant="10" id="5yy-80-krD"/>
+                            <constraint firstAttribute="trailing" secondItem="vw5-mR-oc1" secondAttribute="trailing" id="6fd-jY-pMP"/>
+                            <constraint firstItem="T1p-kk-aav" firstAttribute="top" secondItem="vSg-ph-VRq" secondAttribute="bottom" constant="10" id="7VB-Jf-WDF"/>
+                            <constraint firstItem="vp1-UT-oVe" firstAttribute="trailing" secondItem="y0w-Pb-fZb" secondAttribute="trailing" id="CRj-5b-NVM"/>
+                            <constraint firstItem="vp1-UT-oVe" firstAttribute="trailing" secondItem="vSg-ph-VRq" secondAttribute="trailing" id="D7b-Fa-fSl"/>
+                            <constraint firstItem="vp1-UT-oVe" firstAttribute="trailing" secondItem="T1p-kk-aav" secondAttribute="trailing" id="HTl-ba-CFj"/>
+                            <constraint firstItem="9nk-CQ-52D" firstAttribute="top" secondItem="T1p-kk-aav" secondAttribute="bottom" constant="10" id="IqK-1e-P4D"/>
+                            <constraint firstItem="y0w-Pb-fZb" firstAttribute="top" secondItem="9nk-CQ-52D" secondAttribute="bottom" constant="10" id="Ju6-vL-iDg"/>
+                            <constraint firstItem="6gw-0L-rXp" firstAttribute="top" secondItem="y0w-Pb-fZb" secondAttribute="bottom" constant="10" id="Okn-iw-LqU"/>
+                            <constraint firstItem="6gw-0L-rXp" firstAttribute="leading" secondItem="vp1-UT-oVe" secondAttribute="leading" id="W53-pp-HCM"/>
+                            <constraint firstItem="vSg-ph-VRq" firstAttribute="leading" secondItem="vp1-UT-oVe" secondAttribute="leading" id="XsJ-48-aiN"/>
+                            <constraint firstItem="Fwd-XT-LN1" firstAttribute="top" secondItem="vp1-UT-oVe" secondAttribute="top" constant="25" id="Ztw-tw-LDS"/>
+                            <constraint firstItem="y0w-Pb-fZb" firstAttribute="leading" secondItem="vp1-UT-oVe" secondAttribute="leading" id="cEU-rU-oyd"/>
+                            <constraint firstItem="vw5-mR-oc1" firstAttribute="leading" secondItem="vp1-UT-oVe" secondAttribute="leading" id="gkL-0E-eny"/>
+                            <constraint firstItem="vp1-UT-oVe" firstAttribute="trailing" secondItem="Fwd-XT-LN1" secondAttribute="trailing" id="sYh-i7-z65"/>
+                            <constraint firstItem="vp1-UT-oVe" firstAttribute="trailing" secondItem="6gw-0L-rXp" secondAttribute="trailing" id="tM7-LZ-to5"/>
+                            <constraint firstItem="vw5-mR-oc1" firstAttribute="top" secondItem="Fwd-XT-LN1" secondAttribute="bottom" constant="10" id="ucD-Ch-2SP"/>
+                            <constraint firstItem="vp1-UT-oVe" firstAttribute="trailing" secondItem="9nk-CQ-52D" secondAttribute="trailing" id="ur7-tJ-QPa"/>
+                            <constraint firstItem="T1p-kk-aav" firstAttribute="leading" secondItem="vp1-UT-oVe" secondAttribute="leading" id="vGP-gL-rgb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vp1-UT-oVe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJO-MR-4lg" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
