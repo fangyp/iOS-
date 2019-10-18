@@ -6,7 +6,7 @@
  3. NSRecursiveLock 递归锁
  4. NSConditionLock 条件锁
  5. pthread_mutex 互斥锁（C语言）
- 6. patch_semaphore 信号量实现加锁（GCD）
+ 6. dispatch_semaphore 信号量实现加锁（GCD）
  7. OSSpinLock （暂不建议使用，原因参见[这里](https://blog.ibireme.com/2016/01/16/spinlock_is_unsafe_in_ios/)）
 
 ## 性能对比:
